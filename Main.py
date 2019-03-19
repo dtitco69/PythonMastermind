@@ -14,9 +14,13 @@ for q in RandNumList:
 while GuessList != RandNumList:
     GuessList = []
 
-    for r in range(2):
-        TempGuessInput = input("Pick a number between 1 & 8: ")  #fix later, none int values cause ValueError
-        GuessList.append(int(TempGuessInput))
+    while len(GuessList) != len(RandNumList):
+        TempGuessInput = input("Pick a number between 1 & 8: ")
+        try:
+            GuessList.append(int(TempGuessInput))
+        except ValueError:
+            print ("Guess not valid")
+            continue
 
     for x in GuessList:
         print (x)
