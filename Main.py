@@ -27,26 +27,11 @@ while GuessList != RandNumList:
         print (x)
     
     #change output from guesses
-    if GuessList[0] == RandNumList[0]:
-#        print ("Guess 0 is correct!")
-        GymList[0] = 'X'
-    else:
-        GymList[0] = 'O'
-    if GuessList[1] == RandNumList[1]:
-#        print ("Guess 1 is correct!")
-        GymList[1] = 'X'
-    else:
-        GymList[1] = 'O'        
-    if GuessList[2] == RandNumList[2]:
-#        print ("Guess 2 is correct!")
-        GymList[2] = 'X'
-    else:
-        GymList[2] = 'O'        
-    if GuessList[3] == RandNumList[3]:
-#        print ("Guess 3 is correct!")
-        GymList[3] = 'X'
-    else:
-        GymList[3] = 'O'        
+    for x in range(4):
+        if GuessList[x] == RandNumList[x]:
+            GymList[x] = 'X'
+        else:
+            GymList[x] = 'O'
 
 #debug
     print (GymList)
