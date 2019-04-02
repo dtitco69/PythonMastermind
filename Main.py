@@ -23,9 +23,10 @@ while GuessList != RandNumList:
             print ("Guess not valid")
             continue
 
-    for x in GuessList:
-        print (x)
-    
+##    for x in GuessList:
+##        print (x)
+
+#INIT CHECK#
     #change output from guesses
     for x in range(4):
         if GuessList[x] == RandNumList[x]:
@@ -36,55 +37,18 @@ while GuessList != RandNumList:
 #debug
     print (GymList)
 #debug end
-    
-#    if GuessList[0] == RandNumList[0]:
-#        print ("Guess 0 is correct!")
-    if GymList[0] == 'O':
-        if GuessList[0] == RandNumList[1] and GymList[1] != 'X':
-            print ("Guess 0 is correct, but not in the right place")
-        elif GuessList[0] == RandNumList[2] and GymList[2] != 'X':
-            print ("Guess 0 is correct, but not in the right place")
-        elif GuessList[0] == RandNumList[3] and GymList[3] != 'X':
-            print ("Guess 0 is correct, but not in the right place")
-        else:
-            print ("Sorry, guess 0 is not correct.")
 
-
-#    if GuessList[1] == RandNumList[1]:
-#        print ("Guess 1 is correct!")
-    if GymList[1] == 'O':
-        if GuessList[1] == RandNumList[0] and GymList[0] != 'X':
-            print ("Guess 1 is correct, but not in the right place")
-        elif GuessList[1] == RandNumList[2] and GymList[2] != 'X':
-            print ("Guess 1 is correct, but not in the right place")
-        elif GuessList[1] == RandNumList[3] and GymList[3] != 'X':
-            print ("Guess 1 is correct, but not in the right place")
-        else:
-            print ("Sorry, guess 1 is not correct.")
-
-#    if GuessList[2] == RandNumList[2]:
-#        print ("Guess 2 is correct!")
-    if GymList[2] == 'O':
-        if GuessList[2] == RandNumList[0] and GymList[0] != 'X':
-            print ("Guess 2 is correct, but not in the right place")
-        elif GuessList[2] == RandNumList[1] and GymList[1] != 'X':
-            print ("Guess 2 is correct, but not in the right place")
-        elif GuessList[2] == RandNumList[3] and GymList[3] != 'X':
-            print ("Guess 2 is correct, but not in the right place")
-        else:
-            print ("Sorry, guess 2 is not correct.")    
-
-
-#    if GuessList[3] == RandNumList[3]:
-#        print ("Guess 3 is correct!")
-    if GymList[3] == 'O':
-        if GuessList[3] == RandNumList[0] and GymList[0] != 'X':
-            print ("Guess 3 is correct, but not in the right place")
-        elif GuessList[3] == RandNumList[1] and GymList[1] != 'X':
-            print ("Guess 3 is correct, but not in the right place")
-        elif GuessList[3] == RandNumList[2] and GymList[2] != 'X':
-            print ("Guess 3 is correct, but not in the right place")
-        else:
-            print ("Sorry, guess 3 is not correct.")
+    for x in range(4):
+        if GymList[x] == 'O':
+            if GuessList[x] == RandNumList[0] and GymList[0] != 'X':
+                print ("Guess "+str(x)+" is correct, but not in the right place")
+            elif GuessList[x] == RandNumList[1] and GymList[1] != 'X':
+                print ("Guess "+str(x)+" is correct, but not in the right place")
+            elif GuessList[x] == RandNumList[2] and GymList[2] != 'X':
+                print ("Guess "+str(x)+" is correct, but not in the right place")
+            elif GuessList[x] == RandNumList[3] and GymList[3] != 'X':
+                print ("Guess "+str(x)+" is correct, but not in the right place")
+            else:
+                print ("Sorry, guess "+str(x)+" is not correct.")
     
 print ("thanks for playing")
