@@ -16,13 +16,18 @@ while GuessList != RandNumList:
     GuessList = []
 
     while len(GuessList) != len(RandNumList):
-        TempGuessInput = input("Pick a number between 1 & 8: ")
+        TempGuessInput = input("Pick four numbers between 1 & 8: ")
+        GuessList = list(TempGuessInput)
         try:
-            GuessList.append(int(TempGuessInput))
+           for i in range(4):
+               GuessList[i] = int(GuessList[i])
         except ValueError:
-            print ("Guess not valid")
+            print ("Please enter 4 numbers between 1 & 8 without spaces or punctuation")
             continue
-
+        except IndexError:
+            print ("Please enter FOUR numbers between 1 & 8 without spaces or punctuation")
+            continue
+        
 ##    for x in GuessList:
 ##        print (x)
 
