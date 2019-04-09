@@ -9,8 +9,8 @@ print ("Welcome to MasterMind")
 for r in range(4):
     RandNumList.append(random.randint(1,8))
 
-for q in RandNumList:
-    print (q)
+##for q in RandNumList:
+##    print (q)
 
 while GuessList != RandNumList:
     GuessList = []
