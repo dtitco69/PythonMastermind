@@ -27,6 +27,9 @@ while GuessList != RandNumList:
         except IndexError:
             print ("Please enter FOUR numbers between 1 & 8 without spaces or punctuation")
             continue
+        if len(GuessList) > 4:
+            print ("Please enter FOUR numbers between 1 & 8 without spaces or punctuation")
+            
         
 ##    for x in GuessList:
 ##        print (x)
