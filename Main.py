@@ -3,6 +3,8 @@ import random
 RandNumList = []
 GuessList = []
 GymList = [0,1,2,3]
+AllowedNums = [1,2,3,4,5,6,7,8]
+AnswerCheck = 0
 
 print ("Welcome to MasterMind")
 
@@ -14,8 +16,9 @@ for r in range(4):
 
 while GuessList != RandNumList:
     GuessList = []
-
-    while len(GuessList) != len(RandNumList):
+    AnswerCheck = 0
+    
+    while len(GuessList) != len(RandNumList) and AnswerCheck != 4:
         TempGuessInput = input("Pick four numbers between 1 & 8: ")
         GuessList = list(TempGuessInput)
         try:
@@ -29,10 +32,20 @@ while GuessList != RandNumList:
             continue
         if len(GuessList) > 4:
             print ("Please enter FOUR numbers between 1 & 8 without spaces or punctuation")
+
+
+# Look at this bit it dont work right
+        for i in range(4):
+            for j in range(8):
+                if GuessList[i] == AllowedNums[j]:
+                    AnswerCheck = AnswerCheck+1
+                    if AnswerCheck == 4:
+                        print ("well done you didn't make a mistake")
             
         
-##    for x in GuessList:
-##        print (x)
+##    for i in GuessList:
+##        print (i)
+##    print(RandNumList)
 
 #INIT CHECK#
     #change output from guesses
