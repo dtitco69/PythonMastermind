@@ -17,38 +17,33 @@ for r in range(4):
 while GuessList != RandNumList:
     GuessList = []
     AnswerCheck = 0
-    
-    while len(GuessList) != len(RandNumList) and AnswerCheck != 4:
+    while len(GuessList) != len(RandNumList) or AnswerCheck != 4:
         TempGuessInput = input("Pick four numbers between 1 & 8: ")
         GuessList = list(TempGuessInput)
         try:
            for i in range(4):
                GuessList[i] = int(GuessList[i])
         except ValueError:
-            print ("Please enter 4 numbers between 1 & 8 without spaces or punctuation")
+            print ("Your answer must not contain letters or punctuation")
             continue
         except IndexError:
-            print ("Please enter FOUR numbers between 1 & 8 without spaces or punctuation")
+            print ("Your answer is less than four numbers")
             continue
         if len(GuessList) > 4:
-            print ("Please enter FOUR numbers between 1 & 8 without spaces or punctuation")
-
-
-# Look at this bit it dont work right
+            print ("Your answer is more than four numbers")
         for i in range(4):
             for j in range(8):
                 if GuessList[i] == AllowedNums[j]:
                     AnswerCheck = AnswerCheck+1
-                    if AnswerCheck == 4:
-                        print ("well done you didn't make a mistake")
-            
-        
-##    for i in GuessList:
-##        print (i)
-##    print(RandNumList)
+                    
+##            if AnswerCheck == 4:
+##        print (AnswerCheck)
+##        if AnswerCheck == 4:
+##            print ("well done you didn't make a mistake")
 
 #INIT CHECK#
     #change output from guesses
+
     for x in range(4):
         if GuessList[x] == RandNumList[x]:
             GymList[x] = 'X'
@@ -72,7 +67,7 @@ while GuessList != RandNumList:
             else:
 #                print ("Sorry, guess "+str(x)+" is not correct.")
                 pass
-            
+        
 #debug
     GymList.sort(reverse=True)
     print (GymList)
