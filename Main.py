@@ -17,6 +17,7 @@ for r in range(4):
 while GuessList != RandNumList:
     GuessList = []
     AnswerCheck = 0
+    
     while len(GuessList) != len(RandNumList) or AnswerCheck != 4:
         TempGuessInput = input("Pick four numbers between 1 & 8: ")
         GuessList = list(TempGuessInput)
@@ -36,14 +37,7 @@ while GuessList != RandNumList:
                 if GuessList[i] == AllowedNums[j]:
                     AnswerCheck = AnswerCheck+1
                     
-##            if AnswerCheck == 4:
-##        print (AnswerCheck)
-##        if AnswerCheck == 4:
-##            print ("well done you didn't make a mistake")
-
 #INIT CHECK#
-    #change output from guesses
-
     for x in range(4):
         if GuessList[x] == RandNumList[x]:
             GymList[x] = 'X'
@@ -54,23 +48,16 @@ while GuessList != RandNumList:
         if GymList[x] == '-':
             if GuessList[x] == RandNumList[0] and GymList[0] != 'X':
                 GymList[x] = 'O'
-#                print ("Guess "+str(x)+" is correct, but not in the right place")
             elif GuessList[x] == RandNumList[1] and GymList[1] != 'X':
                 GymList[x] = 'O'
-#                print ("Guess "+str(x)+" is correct, but not in the right place")
             elif GuessList[x] == RandNumList[2] and GymList[2] != 'X':
                 GymList[x] = 'O'
-#                print ("Guess "+str(x)+" is correct, but not in the right place")
             elif GuessList[x] == RandNumList[3] and GymList[3] != 'X':
                 GymList[x] = 'O'
-#                print ("Guess "+str(x)+" is correct, but not in the right place")
             else:
-#                print ("Sorry, guess "+str(x)+" is not correct.")
                 pass
         
-#debug
     GymList.sort(reverse=True)
     print (GymList)
-#debug end
 
-print ("thanks for playing")
+print ("Thanks for playing!")
